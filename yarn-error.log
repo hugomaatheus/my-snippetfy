@@ -1,0 +1,36 @@
+Arguments: 
+  /usr/local/bin/node /usr/share/yarn/bin/yarn.js add install nunjuncks
+
+PATH: 
+  /home/hugo/.composer/vendor/bin:/home/hugo/.rbenv/plugins/ruby-build/bin:/home/hugo/.rbenv/shims:/home/hugo/.rbenv/bin:/home/hugo/bin:/home/hugo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/hugo/010editor:/home/hugo/010editor
+
+Yarn version: 
+  1.10.1
+
+Node version: 
+  10.12.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/nunjuncks: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:61073:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:120166:22)
+      at Request.emit (events.js:182:13)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:121138:10)
+      at Request.emit (events.js:182:13)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:121060:12)
+      at Object.onceWrapper (events.js:273:13)
+      at IncomingMessage.emit (events.js:187:15)
+      at endReadableNT (_stream_readable.js:1094:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
