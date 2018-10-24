@@ -5,9 +5,11 @@ module.exports = {
   signin(req, res) {
     return res.render('auth/signin');
   },
+
   signup(req, res) {
     return res.render('auth/signup');
   },
+
   async register(req, res) {
     const { email } = req.body;
 
@@ -20,5 +22,31 @@ module.exports = {
 
     req.flash('success', 'Usuário cadastrado com sucesso!');
     return res.redirect('/');
+  },
+
+  async authenticate(req, res) {
+    const { email, password } = req.body;
+    const user = await User.findOne({ where: { email } });
+
+    if (!user) {
+      req.flash('error', 'iih, usuário inexistente');
+      return res.redirect('back');
+    }
+
+    if (!await bcrypt.compare(password, user.password)) {
+      req.flash('error', 'opsss, senha incorreta cara!');
+      return res.redirect('back');
+    }
+
+    req.session.user = user;
+    return req.session.save(() => {
+      res.redirect('app/dashboard');
+    });
+  },
+
+  signout(req, res) {
+    return req.session.destroy(() => {
+      res.redirect('/');
+    });
   },
 };
