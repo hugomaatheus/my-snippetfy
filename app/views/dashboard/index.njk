@@ -1,1 +1,28 @@
-<h1>Dashboard</h1>
+{% extends 'layout/default.njk' %}
+
+{% block body %}
+  <div>
+    <nav>
+      <div>
+        <strong>Minha biblioteca</strong>
+        <a href="/signout">Sair</a>
+      </div>
+
+      <div>
+        <strong>CATEGORIAS</strong>
+
+        <ul>
+          {% for category in categories %}
+            <li>
+              <a href="">
+              {{ category.title }}
+              <span>{{ category.Snippets.length }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+
+        <a href="">NOVA CATEGORIA</a>
+      </div>
+    </nav>
+  </div>
+{% endblock %}
