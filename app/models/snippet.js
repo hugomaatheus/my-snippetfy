@@ -1,7 +1,15 @@
 module.exports = (sequelize, DataTypes) => {
   const Snippet = sequelize.define('Snippet', {
-    tittle: DataTypes.STRING,
+    title: DataTypes.STRING,
     content: DataTypes.TEXT,
+  }, {
+    getterMethods: {
+      excerpt() {
+        return this.content.length > 120
+          ? `${this.content.substring(0, this.content.lastIndexOf(' ', 120))}...`
+          : this.content;
+      },
+    },
   });
 
   Snippet.associate = (models) => {
