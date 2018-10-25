@@ -13,6 +13,7 @@
 
 <div class="modal" id="new-snippet">
   <form class="modal-content" method="POST" action="/app/categories/{{ activeCategory }}/snippets/create">
+    <input type="hidden" name="CategoryId" value="{{ categoryId }}" />
     <input type="text" name="title" placeholder="Título do snippet">
 
     <div class="content-container">
