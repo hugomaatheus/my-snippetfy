@@ -9,10 +9,11 @@
 
       <ul>
         {% for category in categories %}
-          <li class="{% if category.id ==activeCategory %}ative{% endif %}">
-            <a href="">
-            {{ category.title }}
-            <span>{{ category.Snippets.length }}</span>
+          <li class="{% if category.id == activeCategory %}ative{% endif %}">
+            <a href="/app/categories/{{ category.id }}">
+              {{ category.title }}
+              <span>{{ category.Snippets.length }}</span>
+            </a>  
           </li>
         {% endfor %}
       </ul>

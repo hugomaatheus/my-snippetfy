@@ -31,7 +31,7 @@ module.exports = {
       return res.render('categories/show', {
         categories,
         snippets,
-        activeCategory: req.body.id,
+        activeCategory: req.params.id,
       });
     } catch (err) {
       return next(err);
